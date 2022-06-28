@@ -1,8 +1,0 @@
----
-version: "3.3"
-services:
-  test:
-    build: .
-    image: samuelmadersondev/first_repo:v1
-    container_name: test1
-    tty: true

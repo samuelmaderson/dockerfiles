@@ -4,7 +4,7 @@ FROM ubuntu:20.04
 RUN apt update
 RUN export DEBIAN_FRONTEND=noninteractive && apt install -yqq php-$PHP_VERSION
 RUN apt install nginx \
-    vim \
+    	vim \
 	php-fpm -y
 RUN apt purge apache2 -y
 COPY confs/nginx/default /etc/nginx/sites-available/default

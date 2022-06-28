@@ -1,0 +1,16 @@
+---
+# config/env - environment variables file
+# run: docker-compose --env-file config/.env up --build -d
+
+version: '2'
+services:
+  app-php:
+    container_name: test
+    image: samuelmadersondev/app-php:v1
+    tty: true
+    ports:
+        - "8077:80"
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    command: bash -c "/etc/init.d/nginx start && /etc/init.d/php${PHP_VERSION}-fpm start && /bin/bash"
